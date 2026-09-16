@@ -15,12 +15,14 @@ public class Main {
       }
     }
     else if (selecionado == 2) {
-      Menu clienteMenu = new Menu("Menu Cliente", Arrays.asList("Listar Clientes cadastrados", "Editar dados do Cliente"));
+      Menu clienteMenu = new Menu("Menu Cliente", Arrays.asList("Listar Clientes cadastrados", "Editar dados do Cliente", "Cadastrar Cliente"));
       int opcaoCliente = clienteMenu.getSelection();
       if (opcaoCliente == 1) {
         listarClientes();
       } else if (opcaoCliente == 2) {
         editarCliente();
+      } else if (opcaoCliente == 3) {
+        cadastrarCliente();
       }
     } else {
       System.out.println(selecionado + "foi selecionada");
@@ -89,4 +91,34 @@ public class Main {
     System.out.println("Conta criada com sucesso! ID da Conta: " + idContaNova);
   }
   
+  public static void cadastrarCliente() {
+    Scanner scanner = new Scanner(System.in);
+    int id = ClienteRepository.getProximoId();
+    System.out.println("Nome do novo cliente: ");
+    String nome = scanner.nextLine();
+    if (nome.isBlank()) {
+      System.out.println("Nome inválido!");
+      return;
+    }
+    System.out.println("CPF do novo cliente: ");
+    String cpf = scanner.nextLine();
+    if (cpf.isBlank()) {
+      System.out.println("CPF inválido!");
+      return;
+    }
+    System.out.println("Numero de telefone: ");
+    String telefone = scanner.nextLine();
+    if (telefone.isBlank()) {
+      System.out.println("Telefone inválido!");
+      return;
+    }
+    System.out.println("Endereço do cliente: ");
+    String endereco = scanner.nextLine();
+    if (endereco.isBlank()) {
+      System.out.println("Endereço inválido!");
+      return;
+    }
+    Cliente cliente = new Cliente(id, nome, cpf, telefone, endereco);
+    System.out.println("Cliente cadastrado: " + cliente.getNome());
+  }
 }
