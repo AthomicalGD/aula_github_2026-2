@@ -2,7 +2,7 @@
 
       private Operacoes() {}
 
-      public static void deposito(ContaInterface conta, int valor) {
-          conta.setSaldo(conta.getSaldo() + valor);
-      }
+      public static void saque(ContaInterface conta, float valor){
+          conta.setSaldo(conta.getSaldo() - valor);
+   }
   }
