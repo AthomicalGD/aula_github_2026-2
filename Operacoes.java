@@ -7,4 +7,7 @@ public final class Operacoes {
     conta.realizarDeposito(valor);
   }
 
+  public static void saque(ContaAbstract conta, float valor) {
+    conta.realizarSaque(valor);
+  }
 }
