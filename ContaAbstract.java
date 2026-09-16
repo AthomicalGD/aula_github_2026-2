@@ -13,6 +13,10 @@ public abstract class ContaAbstract {
     return this.saldo;
   }
 
+  public void setSaldo(float valor) {
+    this.saldo = valor;
+  }
+
   public int getContaId() {
     return this.contaId;
   }
@@ -23,7 +27,11 @@ public abstract class ContaAbstract {
 
   // métodos que podem mudar se tiver diferentes tipos de conta
   public abstract void realizarSaque(float valor);
+
   public abstract void realizarDeposito(float valor);
 
-  public void transferir(ContaAbstract destino, float valor) { this.realizarSaque(valor); destino.realizarDeposito(valor); }
+  public void transferir(ContaAbstract destino, float valor) {
+    this.realizarSaque(valor);
+    destino.realizarDeposito(valor);
+  }
 }

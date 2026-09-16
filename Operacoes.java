@@ -1,8 +1,9 @@
- public final class Operacoes {
+public final class Operacoes {
 
-      private Operacoes() {}
-
-      public static void saque(ContaInterface conta, float valor){
-          conta.setSaldo(conta.getSaldo() - valor);
-   }
+  private Operacoes() {
   }
+
+  public static void saque(ContaAbstract conta, float valor) {
+    conta.setSaldo(conta.getSaldo() - valor);
+  }
+}
