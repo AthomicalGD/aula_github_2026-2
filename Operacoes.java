@@ -4,7 +4,7 @@ public final class Operacoes {
   }
 
   public static void deposito(ContaAbstract conta, float valor) {
-    conta.setSaldo(conta.getSaldo() + valor);
+    conta.realizarDeposito(valor);
   }
 
 }
