@@ -13,10 +13,6 @@ public abstract class ContaAbstract {
     return this.saldo;
   }
 
-  public void setSaldo(float valor) {
-    this.saldo = valor;
-  }
-
   public int getContaId() {
     return this.contaId;
   }

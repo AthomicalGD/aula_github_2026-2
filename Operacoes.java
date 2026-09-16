@@ -4,6 +4,6 @@ public final class Operacoes {
   }
 
   public static void saque(ContaAbstract conta, float valor) {
-    conta.setSaldo(conta.getSaldo() - valor);
+    conta.realizarSaque(valor);
   }
 }
