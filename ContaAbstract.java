@@ -24,4 +24,6 @@ public abstract class ContaAbstract {
   // métodos que podem mudar se tiver diferentes tipos de conta
   public abstract void realizarSaque(float valor);
   public abstract void realizarDeposito(float valor);
+
+  public void transferir(ContaAbstract destino, float valor) { this.realizarSaque(valor); destino.realizarDeposito(valor); }
 }
